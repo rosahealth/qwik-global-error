@@ -1,4 +1,4 @@
-import {component$, createContext, useContext, useStore} from '@builder.io/qwik';
+import {component$, createContext, useContext, useContextProvider, useStore} from '@builder.io/qwik';
 import {App} from '../app/app';
 
 export interface RootState {
@@ -10,6 +10,11 @@ export const ROOTSTATE = createContext<RootState>('Rootstate');
 
 export const Global = component$(() => {
     // removing the following line makes the app "work"
+    const state = useStore({
+        title: '',
+        description: ''
+    });
+    useContextProvider<RootState>(ROOTSTATE, state);
     const rootState = useContext(ROOTSTATE);
     return (
         <html>
