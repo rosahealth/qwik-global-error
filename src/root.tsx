@@ -3,6 +3,8 @@ import './global.css';
 
 export default () => {
   return (
-      <Global></Global>
+      <html>
+        <Global></Global>
+      </html>
   );
 };

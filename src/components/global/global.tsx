@@ -15,17 +15,16 @@ export const Global = component$(() => {
         description: ''
     });
     useContextProvider<RootState>(ROOTSTATE, state);
-    const rootState = useContext(ROOTSTATE);
     return (
-        <html>
-        <head>
-            <meta charSet="utf-8"/>
-            <title>Qwik Blank App</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        </head>
-        <body>
-        <App></App>
-        </body>
-        </html>
+        <>
+            <head>
+                <meta charSet="utf-8"/>
+                <title>{state.title}</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            </head>
+            <body>
+            <App></App>
+            </body>
+        </>
     );
 });
